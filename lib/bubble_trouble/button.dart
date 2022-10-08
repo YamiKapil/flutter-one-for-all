@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
   final IconData icon;
-  final function;
+  final VoidCallback? function;
   const Buttons({super.key, required this.icon, this.function});
 
   @override
