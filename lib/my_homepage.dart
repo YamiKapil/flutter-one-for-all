@@ -3,7 +3,6 @@ import 'package:one_for_all/common_components/navigation_screen.dart';
 
 import 'bubble_trouble/bubble_home.dart';
 import 'common_components/navigation_button.dart';
-import 'habit_tracker/habit_home.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
