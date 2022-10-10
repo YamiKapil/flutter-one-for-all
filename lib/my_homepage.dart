@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'common_components/navigation_screens.dart';
-
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
@@ -19,7 +17,12 @@ class MyHomePage extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: listOfScreens,
+            children: const [
+              NavigationButton(
+                  screenName: 'Bubble Trouble', navigationScreen: BubbleHome()),
+              NavigationButton(
+                  screenName: 'Habit Tracker', navigationScreen: HabitHome()),
+            ],
           ),
         ),
       ),
