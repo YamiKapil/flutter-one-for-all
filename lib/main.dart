@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:one_for_all/habit_tracker/habit_home.dart';
+import 'package:one_for_all/my_homepage.dart';
 
 import 'bubble_trouble/bubble_home.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   // open hive box
@@ -19,10 +20,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: BubbleHome(),
-      home: HabitHome(),
+      // home: HabitHome(),
+      home: const MyHomePage(),
       // control the default color of the app..
-      theme: ThemeData(primarySwatch: Colors.grey),
+      theme: ThemeData(primarySwatch: Colors.purple),
     );
   }
 }

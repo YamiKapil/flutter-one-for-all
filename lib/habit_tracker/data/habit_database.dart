@@ -23,7 +23,8 @@ class HabitDatabase {
     if (_myBox.get(todayDateFormatted()) == null) {
       todaysHabitList = _myBox.get('current_habit_list');
       // set all habits completed to false since its a new day
-      for (var i in todaysHabitList) {
+      // for (var i in todaysHabitList) {
+      for (int i = 0; i < todaysHabitList.length; i++) {
         todaysHabitList[i][1] = false;
       }
     }

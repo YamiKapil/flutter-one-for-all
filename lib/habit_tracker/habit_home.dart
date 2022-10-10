@@ -109,6 +109,9 @@ class _HabitHomeState extends State<HabitHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Habit Tracker'),
+      ),
       backgroundColor: Colors.grey.shade300,
       body: Padding(
         padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),

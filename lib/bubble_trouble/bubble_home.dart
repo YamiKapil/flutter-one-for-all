@@ -180,64 +180,69 @@ class _BubbleHomeState extends State<BubbleHome> {
 
   @override
   Widget build(BuildContext context) {
-    return RawKeyboardListener(
-      focusNode: FocusNode(),
-      autofocus: true,
-      onKey: (event) {
-        if (event.isKeyPressed(LogicalKeyboardKey.arrowLeft)) {
-          moveLeft();
-        } else if (event.isKeyPressed(LogicalKeyboardKey.arrowRight)) {
-          moveRight();
-        }
-        if (event.isKeyPressed(LogicalKeyboardKey.space) ||
-            event.isKeyPressed(LogicalKeyboardKey.arrowUp)) {
-          fireMissile();
-        }
-      },
-      child: Column(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-              color: Colors.pink.shade100,
-              child: Center(
-                child: Stack(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Bubble Trouble'),
+      ),
+      body: RawKeyboardListener(
+        focusNode: FocusNode(),
+        autofocus: true,
+        onKey: (event) {
+          if (event.isKeyPressed(LogicalKeyboardKey.arrowLeft)) {
+            moveLeft();
+          } else if (event.isKeyPressed(LogicalKeyboardKey.arrowRight)) {
+            moveRight();
+          }
+          if (event.isKeyPressed(LogicalKeyboardKey.space) ||
+              event.isKeyPressed(LogicalKeyboardKey.arrowUp)) {
+            fireMissile();
+          }
+        },
+        child: Column(
+          children: [
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.pink.shade100,
+                child: Center(
+                  child: Stack(
+                    children: [
+                      Missile(missileX: missileX, missileHeight: missileHeight),
+                      Balls(ballX: ballX, ballY: ballY),
+                      MyPlayer(playerX: playerX),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.grey,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Missile(missileX: missileX, missileHeight: missileHeight),
-                    Balls(ballX: ballX, ballY: ballY),
-                    MyPlayer(playerX: playerX),
+                    Buttons(
+                      icon: Icons.play_arrow,
+                      function: startGame,
+                    ),
+                    Buttons(
+                      icon: Icons.arrow_back,
+                      function: moveLeft,
+                    ),
+                    Buttons(
+                      icon: Icons.arrow_upward,
+                      function: fireMissile,
+                    ),
+                    Buttons(
+                      icon: Icons.arrow_forward,
+                      function: moveRight,
+                    ),
                   ],
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.grey,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Buttons(
-                    icon: Icons.play_arrow,
-                    function: startGame,
-                  ),
-                  Buttons(
-                    icon: Icons.arrow_back,
-                    function: moveLeft,
-                  ),
-                  Buttons(
-                    icon: Icons.arrow_upward,
-                    function: fireMissile,
-                  ),
-                  Buttons(
-                    icon: Icons.arrow_forward,
-                    function: moveRight,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
