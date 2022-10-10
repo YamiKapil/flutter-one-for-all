@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: HabitHome(),
       home: const MyHomePage(),
       // control the default color of the app..
       theme: ThemeData(primarySwatch: Colors.purple),
