@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:one_for_all/bubble_trouble/bubble_home.dart';
-import 'package:one_for_all/common_components/navigation_button.dart';
-import 'package:one_for_all/habit_tracker/habit_home.dart';
 
 import 'common_components/navigation_screens.dart';
 
