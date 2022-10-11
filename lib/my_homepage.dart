@@ -14,6 +14,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
+        height: double.infinity,
         padding: const EdgeInsets.all(10),
         // child: Column(
         //   crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,7 +27,7 @@ class MyHomePage extends StatelessWidget {
             crossAxisCount: 3,
           ),
           itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(8.0),
             child: listOfScreens[index],
           ),
         ),

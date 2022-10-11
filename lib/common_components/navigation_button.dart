@@ -44,8 +44,9 @@ class _NavigationButtonState extends State<NavigationButton>
           ..rotateY(360 * _animationController.value * (pi / 180.0)),
         child: child,
       ),
-      child: ElevatedButton(
-        onPressed: () async {
+      child: InkWell(
+      //  overlayColor: MaterialStateProperty.all(Colors.red),
+        onTap: () async {
           await _animationController.forward(from: 0.0);
           if (!mounted) return;
           Navigator.push(
@@ -55,26 +56,34 @@ class _NavigationButtonState extends State<NavigationButton>
             ),
           );
         },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 10),
-            Image.asset(
-              widget.appImage,
-              fit: BoxFit.contain,
-              height: 50,
+        child: Center(
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            padding: const EdgeInsets.all(8),
+            color: Theme.of(context).primaryColor,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 10),
+                Image.asset(
+                  widget.appImage,
+                  fit: BoxFit.contain,
+                  height: 50,
+                ),
+                const SizedBox(height: 10),
+                Flexible(
+                  child: Text(
+                    widget.screenName,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 10),
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                widget.screenName,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontSize: 12),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
