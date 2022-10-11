@@ -12,13 +12,22 @@ class MyHomePage extends StatelessWidget {
           child: Text('One For All'),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: listOfScreens,
+      body: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(10),
+        // child: Column(
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children: listOfScreens,
+        // ),
+        child: GridView.builder(
+          itemCount: listOfScreens.length,
+          shrinkWrap: true,
+          gridDelegate:const  SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+          ),
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: listOfScreens[index],
           ),
         ),
       ),
