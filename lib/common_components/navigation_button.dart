@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 class NavigationButton extends StatefulWidget {
   final String screenName;
   final Widget navigationScreen;
+  final String appImage;
   const NavigationButton({
     super.key,
     required this.screenName,
     required this.navigationScreen,
+    required this.appImage,
   });
 
   @override
@@ -53,7 +55,27 @@ class _NavigationButtonState extends State<NavigationButton>
             ),
           );
         },
-        child: Text(widget.screenName),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 10),
+            Image.asset(
+              widget.appImage,
+              fit: BoxFit.contain,
+              height: 50,
+            ),
+            const SizedBox(height: 10),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                widget.screenName,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontSize: 12),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

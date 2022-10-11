@@ -8,9 +8,11 @@ List<Widget> listOfScreens = const [
   NavigationButton(
     screenName: 'Bubble Trouble',
     navigationScreen: BubbleHome(),
+    appImage: 'assets/gifs/itachi.gif',
   ),
   NavigationButton(
     screenName: 'Habit Tracker',
     navigationScreen: HabitHome(),
+    appImage: 'assets/images/habit_tracker.png',
   ),
 ];
