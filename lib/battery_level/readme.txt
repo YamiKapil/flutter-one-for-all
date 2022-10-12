@@ -1,0 +1,1 @@
+This is the app for reading battery level from android and ios using MethodChannel of Flutter.
