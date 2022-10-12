@@ -22,10 +22,13 @@ class _ResponsiveRowState extends State<ResponsiveRow> {
   Widget build(BuildContext context) {
     // log(height.toString(), name: 'first height');
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Responsive Row'),
+      ),
       body: Container(
         color: Colors.blue,
         child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Flexible(
@@ -55,7 +58,7 @@ class _ResponsiveRowState extends State<ResponsiveRow> {
                         children: const [
                           Icon(Icons.ramen_dining),
                           Text(
-                              'Hello there this is the longest text there is lsdjflsd flsd  or is it?'),
+                              'Hello t there is lsdjflsd flsd  or is it?'),
                         ],
                       ),
                     );

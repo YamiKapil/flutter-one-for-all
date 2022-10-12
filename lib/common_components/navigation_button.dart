@@ -5,12 +5,14 @@ import 'package:flutter/material.dart';
 class NavigationButton extends StatefulWidget {
   final String screenName;
   final Widget navigationScreen;
-  final String appImage;
+  final String? appImage;
+  final IconData? icon;
   const NavigationButton({
     super.key,
     required this.screenName,
     required this.navigationScreen,
-    required this.appImage,
+    this.appImage,
+    this.icon,
   });
 
   @override
@@ -45,7 +47,7 @@ class _NavigationButtonState extends State<NavigationButton>
         child: child,
       ),
       child: InkWell(
-      //  overlayColor: MaterialStateProperty.all(Colors.red),
+        //  overlayColor: MaterialStateProperty.all(Colors.red),
         onTap: () async {
           await _animationController.forward(from: 0.0);
           if (!mounted) return;
@@ -69,10 +71,12 @@ class _NavigationButtonState extends State<NavigationButton>
               children: [
                 // const SizedBox(height: 10),
                 Flexible(
-                  child: Image.asset(
-                    widget.appImage,
-                    fit: BoxFit.contain,
-                  ),
+                  child: (widget.appImage != null)
+                      ? Image.asset(
+                          widget.appImage!,
+                          fit: BoxFit.contain,
+                        )
+                      : Icon(widget.icon),
                 ),
                 const SizedBox(height: 10),
                 Flexible(

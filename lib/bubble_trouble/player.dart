@@ -13,14 +13,10 @@ class MyPlayer extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         child: Container(
           // color: Colors.blue,
-          child: (kIsWeb)
-              ? Image.asset(
-                  'gifs/itachi.gif',
-                )
-              : Image.asset(
-                  'assets/gifs/itachi.gif',
-                  height: 80,
-                ),
+          child: Image.asset(
+            'assets/gifs/itachi.gif',
+            height: 80,
+          ),
         ),
       ),
     );

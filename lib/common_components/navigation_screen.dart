@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:one_for_all/battery_level/battery_level.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
 
 import '../bubble_trouble/bubble_home.dart';
@@ -20,5 +21,10 @@ List<Widget> listOfScreens = const [
     screenName: 'Responsive Row',
     navigationScreen: ResponsiveRow(),
     appImage: 'assets/images/habit_tracker.png',
+  ),
+  NavigationButton(
+    screenName: 'Battery Level',
+    navigationScreen: BatteryLevel(),
+    icon: Icons.battery_unknown,
   ),
 ];
