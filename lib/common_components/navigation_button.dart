@@ -64,13 +64,15 @@ class _NavigationButtonState extends State<NavigationButton>
             color: Theme.of(context).primaryColor,
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 10),
-                Image.asset(
-                  widget.appImage,
-                  fit: BoxFit.contain,
-                  height: 50,
+                // const SizedBox(height: 10),
+                Flexible(
+                  child: Image.asset(
+                    widget.appImage,
+                    fit: BoxFit.contain,
+                  ),
                 ),
                 const SizedBox(height: 10),
                 Flexible(
