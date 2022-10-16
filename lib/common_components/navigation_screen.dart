@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:one_for_all/battery_level/battery_level.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
+import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_home.dart';
 
 import '../bubble_trouble/bubble_home.dart';
 import '../habit_tracker/habit_home.dart';
@@ -26,5 +27,10 @@ List<Widget> listOfScreens = const [
     screenName: 'Battery Level',
     navigationScreen: BatteryLevel(),
     icon: Icons.battery_unknown,
+  ),
+  NavigationButton(
+    screenName: 'Tap Puzzle',
+    navigationScreen: TapPuzzleHome(),
+    icon: Icons.touch_app_outlined,
   ),
 ];
