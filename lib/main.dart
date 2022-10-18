@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: ScrollConfiguration(
         behavior: MyBehavior(),
-        // child: const MyHomePage(),
-        child: const TapPuzzleHome(),
+        child: const MyHomePage(),
+        // child: const TapPuzzleHome(),
       ),
       // control the default color of the app..
       theme: ThemeData(primarySwatch: Colors.purple),
