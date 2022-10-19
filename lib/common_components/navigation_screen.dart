@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:one_for_all/battery_level/battery_level.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
+import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
 import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_home.dart';
 
 import '../bubble_trouble/bubble_home.dart';
@@ -30,7 +31,8 @@ List<Widget> listOfScreens = const [
   ),
   NavigationButton(
     screenName: 'Tap Puzzle',
-    navigationScreen: TapPuzzleHome(),
-    icon: Icons.touch_app_outlined,
+    navigationScreen: PlayerSelectionScreen(),
+    // icon: Icons.touch_app_outlined,
+    appImage: 'assets/images/card_bg.jpg',
   ),
 ];
