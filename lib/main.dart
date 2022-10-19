@@ -3,6 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:one_for_all/common_components/my_behaviour.dart';
 import 'package:one_for_all/habit_tracker/habit_home.dart';
 import 'package:one_for_all/my_homepage.dart';
+import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_home.dart';
 
 import 'bubble_trouble/bubble_home.dart';
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       home: ScrollConfiguration(
         behavior: MyBehavior(),
         child: const MyHomePage(),
+        // child: const TapPuzzleHome(),
       ),
       // control the default color of the app..
       theme: ThemeData(primarySwatch: Colors.purple),
