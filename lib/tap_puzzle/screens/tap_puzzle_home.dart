@@ -34,29 +34,63 @@ class _TapPuzzleHomeState extends State<TapPuzzleHome>
   int player3Score = 0;
   int player4Score = 0;
   List numberOfPlayers = [];
-  late AnimationController textAnimation;
+  List<Color> playerBgColor = [
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.orange,
+  ];
+  List<Color> bgColor = [];
+  late AnimationController colorAnimation;
   late Animation<double> animation;
 
   @override
   void initState() {
-    startAnimation();
     images = listOfItems..shuffle();
     setPlayers();
     player = numberOfPlayers[0];
-
+    // startAnimation();
+    setPlayerBgColor();
     flipController.clear();
     flipController = List.generate(listOfItems.length, (i) => FlipController());
+    colorAnimation = AnimationController(
+      duration: const Duration(milliseconds: 2500),
+      vsync: this,
+    );
+    animation = Tween<double>(
+      begin: 0,
+      end: 30 * math.pi,
+    ).animate(colorAnimation)
+      ..addListener(() {
+        setState(() {});
+      });
+    changeBackgroundColor();
     super.initState();
   }
 
   startAnimation() {
-    textAnimation = AnimationController(
-      duration: const Duration(
-        seconds: 2,
-      ),
+    colorAnimation = AnimationController(
+      duration: const Duration(milliseconds: 700),
       vsync: this,
     );
-    animation = CurvedAnimation(parent: textAnimation, curve: Curves.bounceOut);
+    animation = Tween<double>(
+      begin: 0,
+      end: 30 * math.pi,
+    ).animate(colorAnimation)
+      ..addListener(() {
+        setState(() {});
+      });
+    // textAnimation = AnimationController(
+    //   duration: const Duration(
+    //     seconds: 2,
+    //   ),
+    //   vsync: this,
+    // );
+    // animation = CurvedAnimation(parent: textAnimation, curve: Curves.bounceOut);
+  }
+
+  changeBackgroundColor() {
+    colorAnimation.forward();
   }
 
   setPlayers() {
@@ -67,6 +101,12 @@ class _TapPuzzleHomeState extends State<TapPuzzleHome>
       (index) => index,
     );
     // }
+  }
+
+  setPlayerBgColor() {
+    for (var i = 0; i <= numberOfPlayers.length-1; i++) {
+      bgColor.add(playerBgColor[i]);
+    }
   }
 
   resetGame() {
@@ -89,6 +129,7 @@ class _TapPuzzleHomeState extends State<TapPuzzleHome>
   @override
   void dispose() {
     flipController.map((e) => e.dispose());
+    colorAnimation.dispose();
     super.dispose();
   }
 
@@ -107,7 +148,8 @@ class _TapPuzzleHomeState extends State<TapPuzzleHome>
     // log((player3Score > player4Score).toString(), name: 'three win');
     log('build rebuild');
     log(player.toString());
-    log(numberOfPlayers.length.toString());
+    log(numberOfPlayers.length.toString(),name: 'number of players');
+    log(bgColor.toString(),name: 'bg color');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tap Puzzle'),
@@ -125,15 +167,15 @@ class _TapPuzzleHomeState extends State<TapPuzzleHome>
       body: Container(
         height: double.infinity,
         color: (player == numberOfPlayers[0])
-            ? Colors.red
+            ? bgColor.last
             : (player == numberOfPlayers[1])
-                ? Colors.blue
+                ? bgColor[player - 1]
                 : (player == numberOfPlayers[2] && numberOfPlayers[2] != null)
-                    ? Colors.green
+                    ? bgColor[player - 1]
                     : (player == numberOfPlayers[3] &&
                             numberOfPlayers[3] != null)
-                        ? Colors.orange
-                        : Colors.grey,
+                        ? bgColor[player - 1]
+                        : bgColor[player - 1],
         padding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 10,
@@ -148,6 +190,30 @@ class _TapPuzzleHomeState extends State<TapPuzzleHome>
             //     score: player1Score,
             //   ),
             // ),
+            Center(
+              child: Transform.scale(
+                scale: animation.value,
+                child: Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: (player == numberOfPlayers[0])
+                        ? Colors.red
+                        : (player == numberOfPlayers[1])
+                            ? Colors.blue
+                            : (player == numberOfPlayers[2] &&
+                                    numberOfPlayers[2] != null)
+                                ? Colors.green
+                                : (player == numberOfPlayers[3] &&
+                                        numberOfPlayers[3] != null)
+                                    ? Colors.orange
+                                    : Colors.grey,
+                  ),
+                  alignment: Alignment.center,
+                ),
+              ),
+            ),
             const SizedBox(height: 10),
             Align(
               alignment: Alignment.center,
@@ -215,11 +281,16 @@ class _TapPuzzleHomeState extends State<TapPuzzleHome>
                                       if (player < numberOfPlayers.length - 1) {
                                         setState(() {
                                           player++;
+                                          colorAnimation.value = 0;
                                         });
+                                        changeBackgroundColor();
                                       } else {
                                         setState(() {
                                           player = numberOfPlayers[0];
+                                          colorAnimation.value = 0;
                                         });
+                                        // colorAnimation.reverse();
+                                        changeBackgroundColor();
                                       }
                                       twoTaps.clear();
                                       twoTapsElement.clear();
@@ -331,8 +402,7 @@ class _TapPuzzleHomeState extends State<TapPuzzleHome>
                         ),
                       ),
                     )
-                  : (player2Score > player3Score &&
-                          player2Score > player4Score)
+                  : (player2Score > player3Score && player2Score > player4Score)
                       ? Align(
                           alignment: Alignment.bottomRight,
                           child: Transform.rotate(
