@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:one_for_all/common_components/my_behaviour.dart';
-import 'package:one_for_all/habit_tracker/habit_home.dart';
-import 'package:one_for_all/my_homepage.dart';
-import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_home.dart';
+import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
+import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_splash.dart';
 
-import 'bubble_trouble/bubble_home.dart';
+import 'my_homepage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,10 +24,11 @@ class MyApp extends StatelessWidget {
       home: ScrollConfiguration(
         behavior: MyBehavior(),
         child: const MyHomePage(),
-        // child: const TapPuzzleHome(),
+        // child: const BrickBreakerHome(),
+        // child: const TapPuzzleSplash(),
       ),
       // control the default color of the app..
-      theme: ThemeData(primarySwatch: Colors.purple),
+      // theme: ThemeData(primarySwatch: Colors.purple),
     );
   }
 }

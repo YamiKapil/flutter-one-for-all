@@ -1,3 +1,12 @@
+import 'package:flutter/material.dart';
+
+List<Color> playerBgColor = [
+  Colors.red,
+  Colors.blue,
+  Colors.green,
+  Colors.orange,
+];
+
 List listOfItems = [
   'assets/images/habit_tracker.png',
   'assets/images/habit_tracker.png',
@@ -31,4 +40,5 @@ enum Players {
   // player3,
   // player4,
 }
+
 

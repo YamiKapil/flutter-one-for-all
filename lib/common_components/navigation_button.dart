@@ -1,18 +1,21 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NavigationButton extends StatefulWidget {
   final String screenName;
   final Widget navigationScreen;
   final String? appImage;
   final IconData? icon;
+  final MaterialColor? appColor;
   const NavigationButton({
     super.key,
     required this.screenName,
     required this.navigationScreen,
     this.appImage,
     this.icon,
+    this.appColor,
   });
 
   @override
@@ -54,7 +57,15 @@ class _NavigationButtonState extends State<NavigationButton>
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => widget.navigationScreen,
+              builder: (context) => MaterialApp(
+                debugShowCheckedModeBanner: false,
+                home: widget.navigationScreen,
+                theme: ThemeData(
+                  primarySwatch: widget.appColor ?? Colors.purple,
+                  fontFamily: GoogleFonts.audiowide().fontFamily,
+                ),
+                
+              ),
             ),
           );
         },

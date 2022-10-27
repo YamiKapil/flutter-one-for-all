@@ -17,7 +17,7 @@ class PlayerWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
           width: 3,
-          color: Colors.grey,
+          color: Colors.white,
         ),
       ),
       height: 40,
