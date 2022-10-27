@@ -61,7 +61,7 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
                   for (var i = 0; i < 4; i++) {
                     flipController[i].flip();
                   }
-                  // navigate();
+                  navigate();
                 }),
               ));
     });
