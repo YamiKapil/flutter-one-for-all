@@ -61,7 +61,7 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
                   for (var i = 0; i < 4; i++) {
                     flipController[i].flip();
                   }
-                  navigate();
+                  // navigate();
                 }),
               ));
     });
@@ -113,25 +113,41 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      // backgroundColor: Theme.of(context).backgroundColor,
       body: Container(
+        // alignment: Alignment.center,
+        // height: double.infinity,
+        // decoration: const BoxDecoration(
+        //   image: DecorationImage(
+        //     fit: BoxFit.cover,
+        //     image: AssetImage('assets/images/bg1.jpg'),
+        //   ),
+        // ),
         padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-        child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
+            // mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const AnimatedColorText(
-                text: 'TAP PUZZLE',
-                colorsList: [Colors.blue, Colors.purple, Colors.red],
-                textStyle: TextStyle(
-                  fontSize: 34,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.8,
+                // color: Colors.blue,
+                child: const AnimatedColorText(
+                  text: 'CARD FLIP MEMORY GAME',
+                  colorsList: [Colors.blue, Colors.purple, Colors.red],
+                  textStyle: TextStyle(
+                    fontSize: 34,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
+              // const SizedBox(height: 20),
               Padding(
-                padding:
-                    EdgeInsets.all(MediaQuery.of(context).size.width * 0.25),
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.18,
+                ),
                 child: GridView.builder(
                   shrinkWrap: true,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -143,7 +159,7 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
                   itemBuilder: (context, index) {
                     return FlipAnimation(
                       controller: flipController[index],
-                      firstChild: CircleAvatar(
+                      firstChild: const CircleAvatar(
                         radius: 45,
                         foregroundImage: AssetImage(
                           'assets/images/card_bg.jpg',
@@ -158,6 +174,53 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
                       ),
                     );
                   },
+                ),
+              ),
+              const SizedBox(height: 20),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      // color: Colors.red,
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: SlideTransition(
+                        position: Tween<Offset>(
+                          begin: const Offset(-0.5, 0.1),
+                          end: Offset(0.5, 0.1),
+                        ).animate(_animationController),
+                        child: Image(
+                          height: 50,
+                          width: 50,
+                          image: (_animationController.value < 1)
+                              ? const AssetImage(
+                                  'assets/gifs/itachi_loading.gif')
+                              : const AssetImage('assets/gifs/itachi.gif'),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: LinearProgressIndicator(
+                        value: _animationController.value,
+                        minHeight: 10,
+                        backgroundColor: Colors.white,
+                        color: Theme.of(context).backgroundColor,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      (_animationController.value < 1)
+                          ? 'Loading..'
+                          : 'Completed',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
