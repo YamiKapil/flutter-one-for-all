@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:one_for_all/common_components/animated_color_text.dart';
 import 'package:one_for_all/tap_puzzle/data/constants.dart';
-import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_menu_screen.dart';
+import 'package:one_for_all/tap_puzzle/screens/main_menu/tap_puzzle_menu_screen.dart';
 
 import '../components/flip_animation.dart';
 
@@ -97,7 +97,7 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
   }
 
   navigate() {
-    Future.delayed(const Duration(milliseconds: 500)).then(
+    Future.delayed(const Duration(milliseconds: 700)).then(
       (value) =>
           //  _animationController.value == 1 ?
           Navigator.of(context).pushReplacement(

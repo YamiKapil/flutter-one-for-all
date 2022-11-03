@@ -57,15 +57,7 @@ class _NavigationButtonState extends State<NavigationButton>
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => MaterialApp(
-                debugShowCheckedModeBanner: false,
-                home: widget.navigationScreen,
-                theme: ThemeData(
-                  primarySwatch: widget.appColor ?? Colors.purple,
-                  fontFamily: GoogleFonts.audiowide().fontFamily,
-                ),
-                
-              ),
+              builder: (context) => widget.navigationScreen,
             ),
           );
         },

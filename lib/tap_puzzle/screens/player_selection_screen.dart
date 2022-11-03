@@ -53,11 +53,6 @@ class PlayerSelectionScreen extends StatelessWidget {
               playerNumber: '4P',
               tileColor: Colors.green,
               onTap: () {
-                // ScaffoldMessenger.of(context).showSnackBar(
-                //   const SnackBar(
-                //     content: Text('Coming Soon'),
-                //   ),
-                // );
                 Navigator.push(
                   context,
                   MaterialPageRoute(

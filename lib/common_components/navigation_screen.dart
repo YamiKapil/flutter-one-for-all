@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:one_for_all/battery_level/battery_level.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
 import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
@@ -13,23 +14,23 @@ import '../bubble_trouble/bubble_home.dart';
 import '../habit_tracker/habit_home.dart';
 import 'navigation_button.dart';
 
-List<Widget> listOfScreens = const [
-  NavigationButton(
+List<Widget> listOfScreens = [
+  const NavigationButton(
     screenName: 'Bubble Trouble',
     navigationScreen: BubbleHome(),
     appImage: 'assets/gifs/itachi.gif',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Habit Tracker',
     navigationScreen: HabitHome(),
-    appImage: 'assets/images/habit_tracker.png',
+    appImage: 'assets/images/yugi2.png',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Responsive Row',
     navigationScreen: ResponsiveRow(),
-    appImage: 'assets/images/habit_tracker.png',
+    appImage: 'assets/images/yugi2.png',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Battery Level',
     navigationScreen: BatteryLevel(),
     icon: Icons.battery_unknown,
@@ -37,24 +38,31 @@ List<Widget> listOfScreens = const [
   NavigationButton(
     screenName: 'Tap Puzzle',
     // navigationScreen: PlayerSelectionScreen(),
-    navigationScreen: TapPuzzleSplash(),
+    navigationScreen: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const TapPuzzleSplash(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        fontFamily: GoogleFonts.audiowide().fontFamily,
+      ),
+    ),
     // icon: Icons.touch_app_outlined,
     appImage: 'assets/images/card_bg.jpg',
     appColor: Colors.lime,
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Animated Listview',
     navigationScreen: AnimatedListViewBuilder(),
     icon: Icons.list_alt_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Initial ListView Animation',
     navigationScreen: InitialAnimatedListView(index: 25),
     icon: Icons.line_style,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Initial ListView Animation',
     navigationScreen: AnimatedImage(),
     icon: Icons.line_style,
