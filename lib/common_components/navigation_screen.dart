@@ -9,6 +9,7 @@ import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_splash.dart';
 import '../animated_listview_builder/animate_image.dart';
 import '../animated_listview_builder/animated_listview_builder.dart';
 import '../animated_listview_builder/initial_animated_listview.dart';
+import '../riverpod_guide/riverpod_guide_home.dart';
 import 'animated_list_item.dart';
 import '../bubble_trouble/bubble_home.dart';
 import '../habit_tracker/habit_home.dart';
@@ -66,6 +67,12 @@ List<Widget> listOfScreens = [
     screenName: 'Initial ListView Animation',
     navigationScreen: AnimatedImage(),
     icon: Icons.line_style,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Riverpod Guide',
+    navigationScreen: RiverpodGuideHome(),
+    icon: Icons.waves_rounded,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];
