@@ -1,6 +1,22 @@
+import 'package:flutter/material.dart';
+
+List<Color> playerBgColor = [
+  Colors.red,
+  Colors.blue,
+  Colors.green,
+  Colors.orange,
+];
+
+enum GameMode {
+  easy,
+  normal,
+  hard,
+  extreme,
+}
+
 List listOfItems = [
-  'assets/images/habit_tracker.png',
-  'assets/images/habit_tracker.png',
+  'assets/images/bg1.jpg',
+  'assets/images/bg1.jpg',
   'assets/images/yugi2.png',
   'assets/images/saitama.png',
   'assets/images/saitama.png',
@@ -25,10 +41,14 @@ List listOfItems = [
   'assets/images/yugii.jpg',
 ];
 
+// audio files
+String narutoBgm = 'audio/Naruto-Naruto.mp3';
+String noragamiBgm = 'audio/Noragami-Ost-Misogi.mp3';
+String clickSound = 'audio/Click.mp3';
+
 enum Players {
   player1,
   player2,
   // player3,
   // player4,
 }
-

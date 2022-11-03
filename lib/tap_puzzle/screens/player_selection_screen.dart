@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:one_for_all/tap_puzzle/components/selection_tile.dart';
-import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_home.dart';
+import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_game_screen.dart';
 
 class PlayerSelectionScreen extends StatelessWidget {
   const PlayerSelectionScreen({super.key});
@@ -8,8 +8,14 @@ class PlayerSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      // backgroundColor: Theme.of(context).backgroundColor,
       body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage('assets/images/bg.jpg'),
+          ),
+        ),
         width: double.infinity,
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -22,7 +28,7 @@ class PlayerSelectionScreen extends StatelessWidget {
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const TapPuzzleHome(players: 2),
+                  builder: (context) => const TapPuzzleGameScreen(players: 2),
                 ),
               ),
             ),
@@ -33,7 +39,7 @@ class PlayerSelectionScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const TapPuzzleHome(players: 3),
+                    builder: (context) => const TapPuzzleGameScreen(players: 3),
                   ),
                 );
                 // ScaffoldMessenger.of(context).showSnackBar(
@@ -47,15 +53,10 @@ class PlayerSelectionScreen extends StatelessWidget {
               playerNumber: '4P',
               tileColor: Colors.green,
               onTap: () {
-                // ScaffoldMessenger.of(context).showSnackBar(
-                //   const SnackBar(
-                //     content: Text('Coming Soon'),
-                //   ),
-                // );
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const TapPuzzleHome(players: 4),
+                    builder: (context) => const TapPuzzleGameScreen(players: 4),
                   ),
                 );
               },

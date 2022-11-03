@@ -1,18 +1,21 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NavigationButton extends StatefulWidget {
   final String screenName;
   final Widget navigationScreen;
   final String? appImage;
   final IconData? icon;
+  final MaterialColor? appColor;
   const NavigationButton({
     super.key,
     required this.screenName,
     required this.navigationScreen,
     this.appImage,
     this.icon,
+    this.appColor,
   });
 
   @override
