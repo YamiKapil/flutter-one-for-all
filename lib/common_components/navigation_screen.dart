@@ -16,6 +16,7 @@ import '../animated_listview_builder/animate_image.dart';
 import '../animated_listview_builder/animated_listview_builder.dart';
 import '../animated_listview_builder/initial_animated_listview.dart';
 import '../custom_pie_chart/custom_pie_chart.dart';
+import '../flutter_animation/tween_animation.dart';
 import '../riverpod_guide/riverpod_guide_home.dart';
 import '../text_to_speech/flutter_text_to_speech.dart';
 import 'animated_list_item.dart';
@@ -122,6 +123,12 @@ List<Widget> listOfScreens = [
   const NavigationButton(
     screenName: 'Implict Animation',
     navigationScreen: ImplictAnimation(),
+    icon: Icons.offline_bolt,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Tween Animation',
+    navigationScreen: TweenAnimation(),
     icon: Icons.offline_bolt,
     // appImage: 'assets/images/card_bg.jpg',
   ),

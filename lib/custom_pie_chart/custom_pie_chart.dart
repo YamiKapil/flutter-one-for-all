@@ -11,24 +11,57 @@ class CustomPieChart extends StatelessWidget {
         title: const Text('Pie Chart'),
       ),
       body: Center(
-        child: Container(
-          height: 100,
-          width: 100,
-          child: CustomPaint(
-            foregroundPainter: CircularProgress(
-              animationProgress: 0.0,
-              progress: 50,
-              linearGradientFirstColor: Colors.blue,
-              linearGradientSecondColor: Colors.green,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text('Text here'),
-                Text('Text here'),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              children: [
+                CircularProgressIndicator(
+                  // backgroundColor: Colors.blue,
+                  strokeWidth: 5,
+                  color: Colors.yellow,
+                ),
+                CircularProgressIndicator(
+                  // backgroundColor: Colors.blue,
+                  strokeWidth: 5,
+                  color: Colors.blue,
+                ),
+                CircularProgressIndicator(
+                  // backgroundColor: Colors.blue,
+                  strokeWidth: 5,
+                  color: Colors.green,
+                ),
+                CircularProgressIndicator(
+                  // backgroundColor: Colors.blue,
+                  strokeWidth: 5,
+                  color: Colors.red,
+                ),
               ],
             ),
-          ),
+            SizedBox(
+              height: 100,
+            ),
+            SizedBox(
+              height: 100,
+              width: 100,
+              child: CustomPaint(
+                foregroundPainter: CircularProgress(
+                  animationProgress: 0.0,
+                  progress: 50,
+                  linearGradientFirstColor: Colors.blue,
+                  linearGradientSecondColor: Colors.red,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text('Text here'),
+                    Text('Text here'),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -48,14 +81,21 @@ class CircularProgress extends CustomPainter {
   final Color? linearGradientSecondColor;
   @override
   void paint(Canvas canvas, Size size) {
+    Offset center = Offset(size.width / 2, size.height / 2);
+    double animatedRadius = size.width;
     Paint circle = Paint()
       ..strokeWidth = strokeWidth
       ..color = Colors.blue
+      ..shader = LinearGradient(
+        begin: Alignment.topRight,
+        end: Alignment.bottomRight,
+        colors: [
+          linearGradientFirstColor ?? Colors.red,
+          linearGradientSecondColor ?? Colors.blue,
+        ],
+      ).createShader(Rect.fromCircle(center: center, radius: animatedRadius))
       ..style = PaintingStyle.stroke
       ..isAntiAlias = true;
-
-    Offset center = Offset(size.width / 2, size.height / 2);
-    double animatedRadius = size.width;
 
     canvas.drawCircle(center, animatedRadius, circle);
 
