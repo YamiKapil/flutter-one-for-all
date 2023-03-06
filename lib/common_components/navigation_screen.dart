@@ -4,8 +4,10 @@ import 'package:one_for_all/battery_level/battery_level.dart';
 import 'package:one_for_all/flutter_animation/animation_home.dart';
 import 'package:one_for_all/flutter_animation/animation_td.dart';
 import 'package:one_for_all/flutter_animation/chain_animation.dart';
+import 'package:one_for_all/flutter_animation/custom_painter_polygon_animations/custom_painter_polygons_animation.dart';
 import 'package:one_for_all/flutter_animation/hero_animation.dart';
 import 'package:one_for_all/flutter_animation/implict_animation.dart';
+import 'package:one_for_all/loading_success_animation/loading_success_animation.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
 import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
 import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_game_screen.dart';
@@ -136,6 +138,18 @@ List<Widget> listOfScreens = [
     screenName: 'Custom Pie Chart',
     navigationScreen: CustomPieChart(),
     icon: Icons.pie_chart,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Painter and Polygons Animation',
+    navigationScreen: CustomPainterPolygonsAnimation(),
+    icon: Icons.pie_chart,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Painter and Polygons Animation',
+    navigationScreen: LoadingSuccessAnimation(),
+    icon: Icons.circle_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];
