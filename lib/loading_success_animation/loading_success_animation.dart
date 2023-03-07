@@ -96,7 +96,7 @@ class _LoadingSuccessAnimationState extends State<LoadingSuccessAnimation>
     // }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Loading Success Animation'),
+        title: const Text('Loading Success Failure Animation'),
       ),
       body: Center(
         child: AnimatedBuilder(
