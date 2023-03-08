@@ -7,6 +7,7 @@ import 'package:one_for_all/flutter_animation/chain_animation.dart';
 import 'package:one_for_all/flutter_animation/custom_painter_polygon_animations/custom_painter_polygons_animation.dart';
 import 'package:one_for_all/flutter_animation/hero_animation.dart';
 import 'package:one_for_all/flutter_animation/implict_animation.dart';
+import 'package:one_for_all/flutter_painter/paint_curves.dart';
 import 'package:one_for_all/loading_success_animation/loading_success_animation.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
 import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
@@ -150,6 +151,12 @@ List<Widget> listOfScreens = [
     screenName: 'Painter and Polygons Animation',
     navigationScreen: LoadingSuccessAnimation(),
     icon: Icons.circle_outlined,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Painter and Polygons Animation',
+    navigationScreen: PaintCurves(),
+    icon: Icons.line_axis_rounded,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];
