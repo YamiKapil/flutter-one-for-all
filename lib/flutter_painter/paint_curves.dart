@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:one_for_all/flutter_painter/limit_painter.dart';
+
 class PaintCurves extends StatefulWidget {
   const PaintCurves({super.key});
 
@@ -18,10 +20,15 @@ class _PaintCurvesState extends State<PaintCurves> {
       ),
       body: Center(
         child: SizedBox(
-          height: MediaQuery.of(context).size.width,
-          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.width / 2,
+          width: MediaQuery.of(context).size.width / 2,
           child: CustomPaint(
-            painter: SplinePainter(),
+            // painter: SplinePainter(),
+            painter: CurvePainter(),
+            // painter: CustomMyLimitPainter(
+            //   offSetAnimation: 10,
+            //   progressPercentage: 200,
+            // ),
           ),
         ),
       ),
@@ -34,15 +41,123 @@ class CurvePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
     final radius = size.width / 2;
+    final successPath = Path();
+    final curvePath = Path();
+    final rect = Rect.fromCircle(center: center, radius: radius);
+    canvas.drawPaint(Paint()..color = Colors.red);
+    // creating line for success tick
+
+    successPath.moveTo(
+      center.dx + radius / 3 * cos(3),
+      center.dy + radius / 3 * sin(3.3),
+    );
+    successPath.lineTo(
+      center.dx + radius / 3 * cos(2.2),
+      center.dy + radius / 3 * sin(2.2),
+    );
+    successPath.lineTo(
+      center.dx + radius / 2 * cos(0),
+      center.dy + radius / 3 * sin(-0.5),
+    );
+    // curve path..
+    curvePath.moveTo(
+      center.dx + radius * cos(135),
+      center.dy + radius * sin(135),
+    );
+    // curvePath.quadraticBezierTo(
+    //   center.dx,
+    //   center.dy - size.height / 3,
+    //   center.dx + radius * cos(0),
+    //   center.dy + radius * sin(0),
+    // );
+    curvePath.cubicTo(
+      center.dx,
+      center.dy - size.height / 3,
+      center.dx,
+      center.dy + size.height / 3,
+      center.dx + radius * cos(0),
+      center.dy + radius * sin(0),
+    );
+    curvePath.moveTo(
+      center.dx + radius * cos(90),
+      center.dy + radius * sin(90),
+    );
+    curvePath.cubicTo(
+      center.dx,
+      center.dy + size.height / 10,
+      center.dx,
+      center.dy + size.height / 10,
+      center.dx + radius * cos(45),
+      center.dy + radius * sin(45),
+    );
+
+    // curvePath.moveTo(
+    //   center.dx + radius * cos(135),
+    //   center.dy + radius * sin(135),
+    // );
+    // curvePath.quadraticBezierTo(
+    //   center.dx,
+    //   center.dy - size.height / 1,
+    //   center.dx + radius * cos(0),
+    //   center.dy + radius * sin(0),
+    // );
+    // curvePath.moveTo(
+    //   center.dx + radius * cos(135),
+    //   center.dy + radius * sin(135),
+    // );
+    // curvePath.quadraticBezierTo(
+    //   center.dx,
+    //   center.dy + size.height / 1,
+    //   center.dx + radius * cos(0),
+    //   center.dy + radius * sin(0),
+    // );
+    // curvePath.moveTo(
+    //   center.dx + radius * cos(135),
+    //   center.dy + radius * sin(135),
+    // );
+    // curvePath.quadraticBezierTo(
+    //   center.dx,
+    //   center.dy + size.height / 3,
+    //   center.dx + radius * cos(0),
+    //   center.dy + radius * sin(0),
+    // );
+    // curvePath.quadraticBezierTo(
+    //   center.dx + radius * cos(180),
+    //   center.dy + radius * sin(180),
+    //   center.dx + radius * cos(0),
+    //   center.dy + radius * sin(0),
+    // );
+
+    // color for circle stroke
     final paint = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 10
-      ..style = PaintingStyle.stroke
+      ..color = Colors.blue
       ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke
+      ..strokeJoin = StrokeJoin.round
+      ..strokeWidth = 5;
+    // color for success or failure path
+    final successPaint = Paint()
+      ..color = Colors.white
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke
+      ..strokeJoin = StrokeJoin.round
+      ..strokeWidth = 10;
+    // fill the inside of the circle
+    final fillPaint = Paint()
+      ..color = Colors.green
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.fill
       ..strokeJoin = StrokeJoin.round;
-    final path = Path();
-    path.quadraticBezierTo(200, 200, 300, 300);
-    canvas.drawPath(path, paint);
+
+    canvas.drawArc(rect, -pi, -pi * 2, false, fillPaint);
+
+    // canvas.drawPath(successPath, successPaint);
+    canvas.drawPath(curvePath, paint);
+
+    // if (loadingCompleted == false) {
+    //   canvas.drawArc(rect, -pi, -pi * 1.5, false, paint);
+    // }
+    // canvas.drawArc(rect, -pi, -pi * 2 * animationProgress!, false, paint);
   }
 
   @override
