@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:one_for_all/battery_level/battery_level.dart';
+import 'package:one_for_all/click_game/click_game.dart';
 import 'package:one_for_all/flutter_animation/animation_home.dart';
 import 'package:one_for_all/flutter_animation/animation_td.dart';
 import 'package:one_for_all/flutter_animation/chain_animation.dart';
@@ -10,6 +11,8 @@ import 'package:one_for_all/flutter_animation/implict_animation.dart';
 import 'package:one_for_all/flutter_painter/my_graph.dart';
 import 'package:one_for_all/flutter_painter/paint_curves.dart';
 import 'package:one_for_all/flutter_painter/path_painter.dart';
+import 'package:one_for_all/flutter_weird/steless_to_stateful.dart';
+import 'package:one_for_all/isolate_and_compute/isolate_example.dart';
 import 'package:one_for_all/loading_success_animation/loading_success_animation.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
 import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
@@ -165,6 +168,24 @@ List<Widget> listOfScreens = [
     screenName: 'Painter and Polygons Animation',
     navigationScreen: PathExample(),
     icon: Icons.line_axis_rounded,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Click Game',
+    navigationScreen: GameWidget(),
+    icon: Icons.touch_app_outlined,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Isolate & Compute',
+    navigationScreen: IsolateExample(),
+    icon: Icons.touch_app_outlined,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  NavigationButton(
+    screenName: 'Stateless to Stateful',
+    navigationScreen: StateLessToStateFul(),
+    icon: Icons.touch_app_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
   const NavigationButton(
