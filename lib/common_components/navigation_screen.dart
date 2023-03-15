@@ -25,6 +25,7 @@ import '../animated_listview_builder/animated_listview_builder.dart';
 import '../animated_listview_builder/initial_animated_listview.dart';
 import '../custom_pie_chart/custom_pie_chart.dart';
 import '../flutter_animation/tween_animation.dart';
+import '../liquid_circular_progress/liquid_page.dart';
 import '../riverpod_guide/riverpod_guide_home.dart';
 import '../text_to_speech/flutter_text_to_speech.dart';
 import 'animated_list_item.dart';
@@ -167,6 +168,12 @@ List<Widget> listOfScreens = [
   NavigationButton(
     screenName: 'Painter and Polygons Animation',
     navigationScreen: PathExample(),
+    icon: Icons.line_axis_rounded,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  NavigationButton(
+    screenName: 'Liquid Circular Progress Indicator',
+    navigationScreen: LiquidCircularProgressIndicatorPage(),
     icon: Icons.line_axis_rounded,
     // appImage: 'assets/images/card_bg.jpg',
   ),
