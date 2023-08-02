@@ -12,7 +12,9 @@ import 'package:one_for_all/flutter_painter/my_graph.dart';
 import 'package:one_for_all/flutter_painter/paint_curves.dart';
 import 'package:one_for_all/flutter_painter/path_painter.dart';
 import 'package:one_for_all/flutter_weird/steless_to_stateful.dart';
+import 'package:one_for_all/google_login/google_login.dart';
 import 'package:one_for_all/isolate_and_compute/isolate_example.dart';
+import 'package:one_for_all/like_animation/like_animation_screen.dart';
 import 'package:one_for_all/loading_success_animation/loading_success_animation.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
 import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
@@ -210,6 +212,18 @@ List<Widget> listOfScreens = [
         percentageValueInString: '50',
         value: ''),
     icon: Icons.line_axis_rounded,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Google Login',
+    navigationScreen: GoogleLoginScreen(),
+    icon: Icons.line_axis_rounded,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Like Animation',
+    navigationScreen: LikeAnimationScreen(),
+    icon: Icons.favorite,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];
