@@ -19,6 +19,7 @@ class _LikeAnimationScreenState extends State<LikeAnimationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Like Animation')),
       body: Column(
         children: [
           GestureDetector(
