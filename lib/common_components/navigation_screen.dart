@@ -8,11 +8,13 @@ import 'package:one_for_all/flutter_animation/chain_animation.dart';
 import 'package:one_for_all/flutter_animation/custom_painter_polygon_animations/custom_painter_polygons_animation.dart';
 import 'package:one_for_all/flutter_animation/hero_animation.dart';
 import 'package:one_for_all/flutter_animation/implict_animation.dart';
+import 'package:one_for_all/flutter_map/track_map.dart';
 import 'package:one_for_all/flutter_painter/my_graph.dart';
 import 'package:one_for_all/flutter_painter/paint_curves.dart';
 import 'package:one_for_all/flutter_painter/path_painter.dart';
 import 'package:one_for_all/flutter_weird/steless_to_stateful.dart';
 import 'package:one_for_all/google_login/google_login.dart';
+import 'package:one_for_all/google_map_live/google_map_live_screen.dart';
 import 'package:one_for_all/isolate_and_compute/isolate_example.dart';
 import 'package:one_for_all/like_animation/like_animation_screen.dart';
 import 'package:one_for_all/loading_success_animation/loading_success_animation.dart';
@@ -20,6 +22,7 @@ import 'package:one_for_all/responsive_row/responsive_row.dart';
 import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
 import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_game_screen.dart';
 import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_splash.dart';
+import 'package:one_for_all/wifi_scan_inapp/wifi_scan_screen.dart';
 
 import '../a paint and painter/paint_demo.dart';
 import '../amazing_brick/amazing_brick.dart';
@@ -224,6 +227,18 @@ List<Widget> listOfScreens = [
     screenName: 'Like Animation',
     navigationScreen: LikeAnimationScreen(),
     icon: Icons.favorite,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Google Live Map',
+    navigationScreen: GoogleMapLiveScreen(),
+    icon: Icons.map_outlined,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Google Live Map',
+    navigationScreen: LocationTrackingScreen(),
+    icon: Icons.map_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];
