@@ -55,11 +55,11 @@ class _DanceState extends State<Dance> with SingleTickerProviderStateMixin {
     if (widget.animate) {
       Future.delayed(Duration(milliseconds: widget.delay), () {
         if (mounted) {
+          _controller.reset();
           _controller.forward();
         }
       });
     }
-    _controller.reset();
     super.didUpdateWidget(oldWidget);
   }
 
