@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:one_for_all/battery_level/battery_level.dart';
+import 'package:one_for_all/bounce_widget/bouncing_widget.dart';
 import 'package:one_for_all/click_game/click_game.dart';
 import 'package:one_for_all/flutter_animation/animation_home.dart';
 import 'package:one_for_all/flutter_animation/animation_td.dart';
@@ -238,6 +239,12 @@ List<Widget> listOfScreens = [
   const NavigationButton(
     screenName: 'Google Live Map',
     navigationScreen: LocationTrackingScreen(),
+    icon: Icons.map_outlined,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Bounding Widget',
+    navigationScreen: BouncingWidget(),
     icon: Icons.map_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
