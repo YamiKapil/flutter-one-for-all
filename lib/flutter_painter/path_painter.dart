@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 class PathExample extends StatelessWidget {
+  const PathExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return TickerBuilder(builder: (context, sinceLast, total) {
@@ -92,7 +94,7 @@ class PathPainter extends CustomPainter {
 
     Path path2 = Path();
     for (double i = 0; i < 200; i++) {
-      Random r = new Random();
+      // Random r = new Random();
       path2.moveTo(sin(i / 2.14 + pos) * 45 + 200, (i * 12));
       path2.lineTo(sin(i / 2.14 + pos) * 50 + 100, (i * 10));
       paint.style = PaintingStyle.stroke;
@@ -125,5 +127,5 @@ class PathPainter extends CustomPainter {
   // needs to redraw, as that way the flutter engine can optimize
   // its drawing and use less processing power & battery.
   @override
-  bool shouldRepaint(PathPainter old) => old.pos != pos;
+  bool shouldRepaint(PathPainter oldDelegate) => oldDelegate.pos != pos;
 }

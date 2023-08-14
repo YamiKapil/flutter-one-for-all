@@ -1,11 +1,13 @@
 import 'dart:isolate';
-import 'dart:io';
-import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 
 // example One of isolate
 void main(List<String> args) async {
   await for (final msg in getMessage().take(10)) {
-    print(msg);
+    if (kDebugMode) {
+      print(msg);
+    }
   }
 }
 

@@ -32,7 +32,7 @@ class CirclePainter extends CustomPainter {
     var paint = Paint()..color = Colors.green;
     var center = Offset(size.width / 2, size.height / 2);
     var radius = size.width / 2;
-    var rect = Rect.fromCircle(center: center, radius: radius);
+    // var rect = Rect.fromCircle(center: center, radius: radius);
     canvas.drawCircle(center, radius, paint);
   }
 

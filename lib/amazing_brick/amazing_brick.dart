@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:one_for_all/amazing_brick/amazing_brick_game_screen.dart';
 import 'package:one_for_all/common_components/rounded_button.dart';
-import 'dart:math' as math;
 
 class AmazingBrick extends StatefulWidget {
   const AmazingBrick({super.key});
@@ -26,7 +25,7 @@ class _AmazingBrickState extends State<AmazingBrick> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // SizedBox(height: 100),
-            Text(
+            const Text(
               'Flutter Amazing',
               style: TextStyle(
                 fontSize: 35,
@@ -38,13 +37,13 @@ class _AmazingBrickState extends State<AmazingBrick> {
                 Transform.rotate(
                   // angle: 90 * math.pi / 10,
                   angle: 0.8,
-                  child: Icon(
+                  child: const Icon(
                     Icons.square_sharp,
                     size: 50,
                   ),
                 ),
-                SizedBox(width: 10),
-                Text(
+                const SizedBox(width: 10),
+                const Text(
                   'Brick',
                   style: TextStyle(
                     fontSize: 70,
@@ -75,7 +74,7 @@ class _AmazingBrickState extends State<AmazingBrick> {
               ],
             ),
             const SizedBox(height: 100),
-            Align(
+            const Align(
               alignment: Alignment.bottomCenter,
               child: Text('@ YamiKapil'),
             ),

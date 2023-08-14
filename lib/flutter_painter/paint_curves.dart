@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:one_for_all/flutter_painter/limit_painter.dart';
+import 'package:flutter/material.dart';
 
 class PaintCurves extends StatefulWidget {
   const PaintCurves({super.key});
@@ -136,12 +135,12 @@ class CurvePainter extends CustomPainter {
       ..strokeJoin = StrokeJoin.round
       ..strokeWidth = 5;
     // color for success or failure path
-    final successPaint = Paint()
-      ..color = Colors.white
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke
-      ..strokeJoin = StrokeJoin.round
-      ..strokeWidth = 10;
+    // final successPaint = Paint()
+    //   ..color = Colors.white
+    //   ..strokeCap = StrokeCap.round
+    //   ..style = PaintingStyle.stroke
+    //   ..strokeJoin = StrokeJoin.round
+    //   ..strokeWidth = 10;
     // fill the inside of the circle
     final fillPaint = Paint()
       ..color = Colors.green

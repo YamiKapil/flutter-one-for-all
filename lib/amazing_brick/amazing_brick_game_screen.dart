@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:developer';
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:one_for_all/amazing_brick/amazing_brick_game_over.dart';
@@ -78,7 +77,7 @@ class _AmazingBrickGameScreenState extends State<AmazingBrickGameScreen> {
 
   // start game
   void startGame() {
-    final screenHeight = MediaQuery.of(context).size.height;
+    // final screenHeight = MediaQuery.of(context).size.height;
     gameStarted = true;
     _myTimer = Timer.periodic(const Duration(milliseconds: 90), (timer) {
       time += 0.05;
@@ -194,7 +193,7 @@ class _AmazingBrickGameScreenState extends State<AmazingBrickGameScreen> {
             // color: Colors.red,
             alignment: Alignment(brickX, brickY),
             duration: const Duration(milliseconds: 0),
-            child: GameBrick(),
+            child: const GameBrick(),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,

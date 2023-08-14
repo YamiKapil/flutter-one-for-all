@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:one_for_all/battery_level/battery_level.dart';
 import 'package:one_for_all/bounce_widget/bouncing_widget.dart';
 import 'package:one_for_all/click_game/click_game.dart';
+import 'package:one_for_all/cusstom_slider/custom_slider.dart';
 import 'package:one_for_all/flutter_animation/animation_home.dart';
 import 'package:one_for_all/flutter_animation/animation_td.dart';
 import 'package:one_for_all/flutter_animation/chain_animation.dart';
@@ -20,24 +21,20 @@ import 'package:one_for_all/isolate_and_compute/isolate_example.dart';
 import 'package:one_for_all/like_animation/like_animation_screen.dart';
 import 'package:one_for_all/loading_success_animation/loading_success_animation.dart';
 import 'package:one_for_all/responsive_row/responsive_row.dart';
-import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
-import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_game_screen.dart';
 import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_splash.dart';
-import 'package:one_for_all/wifi_scan_inapp/wifi_scan_screen.dart';
 
 import '../a paint and painter/paint_demo.dart';
 import '../amazing_brick/amazing_brick.dart';
 import '../animated_listview_builder/animate_image.dart';
 import '../animated_listview_builder/animated_listview_builder.dart';
 import '../animated_listview_builder/initial_animated_listview.dart';
+import '../bubble_trouble/bubble_home.dart';
 import '../custom_pie_chart/custom_pie_chart.dart';
 import '../flutter_animation/tween_animation.dart';
+import '../habit_tracker/habit_home.dart';
 import '../liquid_circular_progress/liquid_page.dart';
 import '../riverpod_guide/riverpod_guide_home.dart';
 import '../text_to_speech/flutter_text_to_speech.dart';
-import 'animated_list_item.dart';
-import '../bubble_trouble/bubble_home.dart';
-import '../habit_tracker/habit_home.dart';
 import 'navigation_button.dart';
 
 List<Widget> listOfScreens = [
@@ -245,6 +242,12 @@ List<Widget> listOfScreens = [
   const NavigationButton(
     screenName: 'Bounding Widget',
     navigationScreen: BouncingWidget(),
+    icon: Icons.map_outlined,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  NavigationButton(
+    screenName: 'Custom Slider',
+    navigationScreen: CustomSlider(),
     icon: Icons.map_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),

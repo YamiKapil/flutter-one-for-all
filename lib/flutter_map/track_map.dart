@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -11,10 +9,10 @@ class LocationTrackingScreen extends StatefulWidget {
 }
 
 class _LocationTrackingScreenState extends State<LocationTrackingScreen> {
-  final Completer<GoogleMapController> _controller = Completer();
+  // final Completer<GoogleMapController> _controller = Completer();
 
   static LatLng sourceLocation = const LatLng(27.6842783, 85.3167233);
-  static LatLng destination = const LatLng(27.6632, 85.36113);
+  // static LatLng destination = const LatLng(27.6632, 85.36113);
 
   @override
   Widget build(BuildContext context) {

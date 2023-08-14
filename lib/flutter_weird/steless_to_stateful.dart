@@ -15,8 +15,7 @@ class StateLessToStateFul extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Stateless to Stateful'),
       ),
-      body: Container(
-          child: Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,7 +31,7 @@ class StateLessToStateFul extends StatelessWidget {
             Text('$counter')
           ],
         ),
-      )),
+      ),
     );
   }
 }

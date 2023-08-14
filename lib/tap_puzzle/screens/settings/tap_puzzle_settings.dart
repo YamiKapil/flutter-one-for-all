@@ -43,7 +43,7 @@ class TapPuzzleSettings extends StatelessWidget {
             ),
             trailing: TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Easy',
                 style: TextStyle(
                   fontSize: 20,

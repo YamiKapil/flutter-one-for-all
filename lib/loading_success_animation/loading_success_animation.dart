@@ -16,9 +16,9 @@ class _LoadingSuccessAnimationState extends State<LoadingSuccessAnimation>
   late AnimationController _failureController;
   late AnimationController _fillController;
   late Animation _rotateAnimation;
-  late Animation _fillAnimation;
-  late Animation _successAnimation;
-  late Animation _failureAnimation;
+  // late Animation _fillAnimation;
+  // late Animation _successAnimation;
+  // late Animation _failureAnimation;
   bool isLoading = true;
 
   @override
@@ -163,12 +163,12 @@ class LoadingPainter extends CustomPainter {
       );
     }
     // color for circle stroke
-    final paint = Paint()
-      ..color = Colors.blue
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke
-      ..strokeJoin = StrokeJoin.round
-      ..strokeWidth = 10;
+    // final paint = Paint()
+    //   ..color = Colors.blue
+    //   ..strokeCap = StrokeCap.round
+    //   ..style = PaintingStyle.stroke
+    //   ..strokeJoin = StrokeJoin.round
+    //   ..strokeWidth = 10;
     // color for success or failure path
     final successPaint = Paint()
       ..color = Colors.white

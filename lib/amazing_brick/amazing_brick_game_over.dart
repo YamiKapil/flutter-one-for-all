@@ -26,7 +26,7 @@ class AmazingBrickGameOver extends StatelessWidget {
         children: [
           TextButton(
             onPressed: playAgainTap,
-            child: Text(
+            child: const Text(
               'Game Over',
               style: TextStyle(
                 fontSize: 45,
@@ -47,7 +47,7 @@ class AmazingBrickGameOver extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              child: Row(
+              child: const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
@@ -128,8 +128,8 @@ class AmazingBrickGameOver extends StatelessWidget {
                 iconColor: Colors.white,
                 containerColor: Colors.blue,
               ),
-              SizedBox(width: 20),
-              RoundedButton(
+              const SizedBox(width: 20),
+              const RoundedButton(
                 // onPress: exitTap,
                 icon: Icons.share,
                 iconColor: Colors.white,

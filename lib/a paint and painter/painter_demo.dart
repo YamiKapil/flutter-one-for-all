@@ -27,22 +27,22 @@ class DemoRectangle extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    var center = Offset(size.width / 2, size.height / 2);
-    canvas.drawRect(rect, Paint()..color = rectColor);
-    var paint = Paint()
-      ..shader = LinearGradient(
-        colors: [
-          Colors.red,
-          Colors.white,
-        ],
-      ).createShader(rect);
-    var rectangle =
-        Rect.fromCenter(center: center, width: 300.0, height: 150.0);
-    // rounded rectangle
-    var roundedRectangle = RRect.fromRectAndRadius(
-      Rect.fromCenter(center: center, width: 300.0, height: 150.0),
-      const Radius.circular(32.0),
-    );
+    // var center = Offset(size.width / 2, size.height / 2);
+    // canvas.drawRect(rect, Paint()..color = rectColor);
+    // var paint = Paint()
+    //   ..shader = LinearGradient(
+    //     colors: [
+    //       Colors.red,
+    //       Colors.white,
+    //     ],
+    //   ).createShader(rect);
+    // var rectangle =
+    //     Rect.fromCenter(center: center, width: 300.0, height: 150.0);
+    // // rounded rectangle
+    // var roundedRectangle = RRect.fromRectAndRadius(
+    //   Rect.fromCenter(center: center, width: 300.0, height: 150.0),
+    //   const Radius.circular(32.0),
+    // );
   }
 
   @override

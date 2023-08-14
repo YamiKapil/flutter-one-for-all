@@ -185,11 +185,11 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
                     Container(
                       // color: Colors.red,
                       width: double.infinity,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: SlideTransition(
                         position: Tween<Offset>(
                           begin: const Offset(-0.5, 0.1),
-                          end: Offset(0.5, 0.1),
+                          end: const Offset(0.5, 0.1),
                         ).animate(_animationController),
                         child: Image(
                           height: 50,
@@ -208,7 +208,7 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
                         value: _animationController.value,
                         minHeight: 10,
                         backgroundColor: Colors.white,
-                        color: Theme.of(context).backgroundColor,
+                        color: Theme.of(context).colorScheme.background,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -216,7 +216,7 @@ class _TapPuzzleSplashState extends State<TapPuzzleSplash>
                       (_animationController.value < 1)
                           ? 'Loading..'
                           : 'Completed',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                       ),
                     ),
