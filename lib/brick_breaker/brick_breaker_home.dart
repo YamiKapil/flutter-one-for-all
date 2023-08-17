@@ -81,16 +81,16 @@ class _BrickBreakerHomeState extends State<BrickBreakerHome> {
           myBricks[i][2] == false) {
         setState(() {
           myBricks[i][2] = true;
-          // since brick is broken , update direction of ball based on 
+          // since brick is broken , update direction of ball based on
           // which side of the brick it hit
           // to do this calculate the distance of the ball form each of
           // the 4 sides of contact
           // the smallest distance is the side the ball has hit
 
-          double leftSideDist = (myBricks[i][0]-ballX).abs();
-          double rightSideDist = (myBricks[i][0]+brickWidth-ballX).abs();
-          double topSideDist = (myBricks[i][1]-ballY).abs();
-          double bottomSideDist = (myBricks[i][1]+brickHeight-ballY).abs();
+          double leftSideDist = (myBricks[i][0] - ballX).abs();
+          double rightSideDist = (myBricks[i][0] + brickWidth - ballX).abs();
+          double topSideDist = (myBricks[i][1] - ballY).abs();
+          double bottomSideDist = (myBricks[i][1] + brickHeight - ballY).abs();
 
           // if ball hit bottom side of brick
           ballYDirection = Direction.down;

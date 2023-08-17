@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:one_for_all/common_components/animated_color_text.dart';
 
 class CoverScreen extends StatelessWidget {
   final bool hasGameStarted;

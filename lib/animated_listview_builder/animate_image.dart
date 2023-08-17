@@ -1,13 +1,12 @@
-
 import "package:flutter/material.dart";
 
 class AnimatedImage extends StatefulWidget {
   const AnimatedImage({super.key});
 
   @override
-  State<AnimatedImage> createState() =>
-      _AnimatedImageState();
+  State<AnimatedImage> createState() => _AnimatedImageState();
 }
+
 class _AnimatedImageState extends State<AnimatedImage>
     with TickerProviderStateMixin {
   late AnimationController _animationController;
@@ -15,9 +14,10 @@ class _AnimatedImageState extends State<AnimatedImage>
 
   @override
   void initState() {
+    super.initState();
     _animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 3));
-    _animation = Tween<Offset>(begin: Offset.zero, end: Offset(0.1,0))
+    _animation = Tween<Offset>(begin: Offset.zero, end: Offset(0.1, 0))
         .animate(_animationController);
     _animationController.forward().whenComplete(() {
       // when animation completes, put your code here

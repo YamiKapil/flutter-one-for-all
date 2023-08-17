@@ -1,15 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:one_for_all/amazing_brick/amazing_brick.dart';
-import 'package:one_for_all/amazing_brick/amazing_brick_game_screen.dart';
 import 'package:one_for_all/common_components/my_behaviour.dart';
-import 'package:one_for_all/flutter_map/flutter_map_sample.dart';
-import 'package:one_for_all/tap_puzzle/screens/player_selection_screen.dart';
-import 'package:one_for_all/tap_puzzle/screens/tap_puzzle_splash.dart';
-import 'package:socket_io_client/socket_io_client.dart';
 
 import 'my_homepage.dart';
 
@@ -58,10 +50,6 @@ class MyApp extends StatelessWidget {
       home: ScrollConfiguration(
         behavior: MyBehavior(),
         child: const MyHomePage(),
-        // child: const AmazingBrick(),
-        // child: const ClientBranchMapScreen()
-        // child: const BrickBreakerHome(),
-        // child: const TapPuzzleSplash(),
       ),
       // control the default color of the app..
       // theme: ThemeData(primarySwatch: Colors.purple),

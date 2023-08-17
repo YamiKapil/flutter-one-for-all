@@ -1,9 +1,4 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class OrderTrackingPage extends StatefulWidget {
   const OrderTrackingPage({super.key});
@@ -13,14 +8,14 @@ class OrderTrackingPage extends StatefulWidget {
 }
 
 class _OrderTrackingPageState extends State<OrderTrackingPage> {
-  final Completer<GoogleMapController> _controller = Completer();
-  static const LatLng sourceLocation = LatLng(37.33500926, -122.0327188);
-  static const LatLng destination = LatLng(37.33429383, -122.06600055);
+  // final Completer<GoogleMapController> _controller = Completer();
+  // static const LatLng sourceLocation = LatLng(37.33500926, -122.0327188);
+  // static const LatLng destination = LatLng(37.33429383, -122.06600055);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Track Order",
           style: TextStyle(
             color: Colors.black,

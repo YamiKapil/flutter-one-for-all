@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:developer';
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:one_for_all/amazing_brick/amazing_brick_game_over.dart';
@@ -32,10 +31,14 @@ class _AmazingBrickGameScreenState extends State<AmazingBrickGameScreen> {
   // barrier properties
   double barrierYOneRight = 0;
   double barrierYOneLeft = 0;
-  double barrierYTwoRight = -0.8;
-  double barrierYTwoLeft = -0.8;
-  double barrierYThreeRight = -1.6;
-  double barrierYThreeLeft = -1.6;
+  // double barrierYTwoRight = -0.8;
+  // double barrierYTwoLeft = -0.8;
+  double barrierYTwoRight = -1;
+  double barrierYTwoLeft = -1;
+  // double barrierYThreeRight = -1.6;
+  // double barrierYThreeLeft = -1.6;
+  double barrierYThreeRight = -2;
+  double barrierYThreeLeft = -2;
   bool isBarrierTouched = false;
 
   // make left jump
@@ -74,53 +77,57 @@ class _AmazingBrickGameScreenState extends State<AmazingBrickGameScreen> {
 
   // start game
   void startGame() {
+    // final screenHeight = MediaQuery.of(context).size.height;
     gameStarted = true;
     _myTimer = Timer.periodic(const Duration(milliseconds: 90), (timer) {
       time += 0.05;
       // height = -4.9 * time * time + 2 * time;
-      height = -6.9 * (time * time) + 1.5 * time;
+      // height = -6.9 * (time * time) + 1.5 * time;
+      height = -6.9 * (time * time) + 1.2 * time;
       setState(() {
         brickY = initialHeight - height;
         (onLeftTap) ? brickX -= 0.1 : brickX += 0.1;
         // moving barrier one right
-        if (barrierYOneRight > 1) {
-          // barrierYOneRight -= 1.8;
-          barrierYOneRight -= 2.3;
-        } else {
-          barrierYOneRight += 0.05;
-        }
-        // moving barrier one left
-        if (barrierYOneLeft > 1) {
-          // barrierYOneLeft -= 1.8;
-          barrierYOneLeft -= 2.3;
-        } else {
-          barrierYOneLeft += 0.05;
-        }
-        // moving barrier two right
-        if (barrierYTwoRight > 1) {
-          // barrierYTwoRight -= 1.8;
-          barrierYTwoRight -= 2.3;
-        } else {
-          barrierYTwoRight += 0.05;
-        }
-        // moving barrier two left
-        if (barrierYTwoLeft > 1) {
-          // barrierYTwoLeft -= 1.8;
-          barrierYTwoLeft -= 2.3;
-        } else {
-          barrierYTwoLeft += 0.05;
-        }
-        // moving barrier three right
-        if (barrierYThreeRight > 1) {
-          barrierYThreeRight -= 2.3;
-        } else {
-          barrierYThreeRight += 0.05;
-        }
-        // moving barrier three left
-        if (barrierYThreeLeft > 1) {
-          barrierYThreeLeft -= 2.3;
-        } else {
-          barrierYThreeLeft += 0.05;
+        if (brickY < 0.3) {
+          if (barrierYOneRight > 1) {
+            // barrierYOneRight -= 1.8;
+            barrierYOneRight -= 2.3;
+          } else {
+            barrierYOneRight += 0.05;
+          }
+          // moving barrier one left
+          if (barrierYOneLeft > 1) {
+            // barrierYOneLeft -= 1.8;
+            barrierYOneLeft -= 2.3;
+          } else {
+            barrierYOneLeft += 0.05;
+          }
+          // moving barrier two right
+          if (barrierYTwoRight > 1) {
+            // barrierYTwoRight -= 1.8;
+            barrierYTwoRight -= 2.3;
+          } else {
+            barrierYTwoRight += 0.05;
+          }
+          // moving barrier two left
+          if (barrierYTwoLeft > 1) {
+            // barrierYTwoLeft -= 1.8;
+            barrierYTwoLeft -= 2.3;
+          } else {
+            barrierYTwoLeft += 0.05;
+          }
+          // moving barrier three right
+          if (barrierYThreeRight > 1) {
+            barrierYThreeRight -= 2.3;
+          } else {
+            barrierYThreeRight += 0.05;
+          }
+          // moving barrier three left
+          if (barrierYThreeLeft > 1) {
+            barrierYThreeLeft -= 2.3;
+          } else {
+            barrierYThreeLeft += 0.05;
+          }
         }
 
         // check collision
@@ -186,7 +193,7 @@ class _AmazingBrickGameScreenState extends State<AmazingBrickGameScreen> {
             // color: Colors.red,
             alignment: Alignment(brickX, brickY),
             duration: const Duration(milliseconds: 0),
-            child: GameBrick(),
+            child: const GameBrick(),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
