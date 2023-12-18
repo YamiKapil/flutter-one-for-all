@@ -16,8 +16,8 @@ class _AnimatedImageState extends State<AnimatedImage>
   void initState() {
     super.initState();
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
-    _animation = Tween<Offset>(begin: Offset.zero, end: Offset(0.1, 0))
+        AnimationController(vsync: this, duration: const Duration(seconds: 3));
+    _animation = Tween<Offset>(begin: Offset.zero, end: const Offset(0.1, 0))
         .animate(_animationController);
     _animationController.forward().whenComplete(() {
       // when animation completes, put your code here
@@ -44,8 +44,8 @@ class _AnimatedImageState extends State<AnimatedImage>
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   alignment: Alignment.topLeft,
-                  duration: Duration(seconds: 0),
-                  child: Image(
+                  duration: const Duration(seconds: 0),
+                  child: const Image(
                     height: 50,
                     width: 50,
                     image: AssetImage('assets/images/yami.jpg'),

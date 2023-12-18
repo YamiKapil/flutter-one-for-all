@@ -23,7 +23,7 @@ class _PaintDemoState extends State<PaintDemo> {
           // painter: RectanglePainter(),
           // painter: OvalPainter(),
           // painter: ArcPainter(),
-          painter: QuadraticBezierCurvePainter(),
+          painter: const QuadraticBezierCurvePainter(),
           child: Container(),
         ),
       ),

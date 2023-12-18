@@ -15,18 +15,16 @@ class _GoogleLoginScreenState extends State<GoogleLoginScreen> {
       appBar: AppBar(
         title: const Text('Google Login'),
       ),
-      body: Container(
-        child: ElevatedButton(
-          onPressed: () async {
-            var user = await LoginApi.login();
-            if (user != null) {
-              print('hehehe');
-              print(user.displayName);
-              print(user.email); 
-            }
-          },
-          child: const Text('Login with Google'),
-        ),
+      body: ElevatedButton(
+        onPressed: () async {
+          var user = await LoginApi.login();
+          if (user != null) {
+            print('hehehe');
+            print(user.displayName);
+            print(user.email);
+          }
+        },
+        child: const Text('Login with Google'),
       ),
     );
   }

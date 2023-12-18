@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -33,7 +31,7 @@ class StateProviderPage extends ConsumerWidget {
           children: [
             Text(
               'the value is $value',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 20),
             ElevatedButton(

@@ -35,7 +35,7 @@ class StateNotifierProviderPage extends ConsumerWidget {
                               // sum the total price of the cart
                               Text(
                                 'Total: \$${cartStateNotifier.fold<double>(0, (previousValue, element) => previousValue + element.price)}',
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context).textTheme.titleLarge,
                               ),
                             ],
                           ),

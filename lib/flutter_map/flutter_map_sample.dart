@@ -10,7 +10,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 This screen shows the branch location in map
  */
 class ClientBranchMapScreen extends StatefulWidget {
-  const ClientBranchMapScreen( {Key? key}) : super(key: key);
+  const ClientBranchMapScreen({super.key});
 
   // final Data branch;
 
@@ -42,6 +42,7 @@ class _ClientBranchMapScreenState extends State<ClientBranchMapScreen> {
     _completer.complete(controller);
   }
 
+  // ignore: unused_element
   _onCameraUpdate(LatLng pos) async {
     final GoogleMapController controller = await _completer.future;
     controller.animateCamera(
@@ -85,10 +86,8 @@ class _ClientBranchMapScreenState extends State<ClientBranchMapScreen> {
         myLocationButtonEnabled: false,
         zoomControlsEnabled: false,
         onMapCreated: _onMapCreated,
-        initialCameraPosition: CameraPosition(
-          target: LatLng(
-            37.42796133580664, -122.085749655962
-          ),
+        initialCameraPosition: const CameraPosition(
+          target: LatLng(37.42796133580664, -122.085749655962),
           zoom: 17,
         ),
         markers: _marker,

@@ -8,17 +8,17 @@ class Wave extends StatefulWidget {
   final Axis direction;
 
   const Wave({
-    Key? key,
+    super.key,
     required this.value,
     required this.color,
     required this.direction,
-  }) : super(key: key);
+  });
 
   @override
-  _WaveState createState() => _WaveState();
+  WaveState createState() => WaveState();
 }
 
-class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
+class WaveState extends State<Wave> with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 
   @override
@@ -27,7 +27,7 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     );
     _animationController.repeat();
   }
@@ -46,13 +46,13 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
         curve: Curves.easeInOut,
       ),
       builder: (context, child) => ClipPath(
-        child: Container(
-          color: widget.color,
-        ),
         clipper: _WaveClipper(
           animationValue: _animationController.value,
           value: widget.value,
           direction: widget.direction,
+        ),
+        child: Container(
+          color: widget.color,
         ),
       ),
     );

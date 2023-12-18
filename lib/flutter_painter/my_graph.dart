@@ -15,8 +15,8 @@ class MyLimitGraphWidget extends StatefulWidget {
     required this.percentageValue,
     required this.percentageValueInString,
     this.headingInTop = true,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<MyLimitGraphWidget> createState() => _MyLimitGraphWidgetState();
@@ -179,8 +179,7 @@ class _MyLimitGraphWidgetState extends State<MyLimitGraphWidget>
 class _HeadingNullCheckedWidget extends StatelessWidget {
   ///If null, shows nothing
   final String? heading;
-  const _HeadingNullCheckedWidget({required this.heading, Key? key})
-      : super(key: key);
+  const _HeadingNullCheckedWidget({required this.heading});
 
   @override
   Widget build(BuildContext context) {

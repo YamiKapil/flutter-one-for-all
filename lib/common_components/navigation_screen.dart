@@ -169,7 +169,7 @@ List<Widget> listOfScreens = [
     icon: Icons.line_axis_rounded,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Painter and Polygons Animation',
     navigationScreen: PathExample(),
     icon: Icons.line_axis_rounded,
@@ -199,7 +199,7 @@ List<Widget> listOfScreens = [
     icon: Icons.touch_app_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Paint Demo',
     navigationScreen: PaintDemo(),
     icon: Icons.format_paint_outlined,
@@ -245,7 +245,7 @@ List<Widget> listOfScreens = [
     icon: Icons.map_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Custom Slider',
     navigationScreen: CustomSlider(),
     icon: Icons.map_outlined,

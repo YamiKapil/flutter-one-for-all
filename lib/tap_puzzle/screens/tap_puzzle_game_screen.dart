@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:one_for_all/my_homepage.dart';
 import 'package:one_for_all/tap_puzzle/components/flip_animation.dart';
 import 'package:one_for_all/tap_puzzle/components/game_end_widget.dart';
-import 'package:one_for_all/tap_puzzle/screens/main_menu/tap_puzzle_menu_screen.dart';
 
 import '../components/player_widget.dart';
 import '../data/constants.dart';

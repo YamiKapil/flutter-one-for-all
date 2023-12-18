@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class ChildSizeNotifier extends StatefulWidget {
   final Widget Function(BuildContext context, Size size, Widget? child) builder;
   final Widget? child;
-  ChildSizeNotifier({
-    Key? key,
+  const ChildSizeNotifier({
+    super.key,
     required this.builder,
-     this.child,
-  }) : super(key: key){}
+    this.child,
+  });
 
   @override
   State<ChildSizeNotifier> createState() => _ChildSizeNotifierState();

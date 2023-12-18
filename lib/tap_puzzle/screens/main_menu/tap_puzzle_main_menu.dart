@@ -1,7 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:one_for_all/main.dart';
-import 'package:one_for_all/my_homepage.dart';
 import 'package:one_for_all/tap_puzzle/data/constants.dart';
 
 import '../../components/menu_items.dart';
@@ -11,10 +10,10 @@ class TapPuzzleMainMenu extends StatelessWidget {
   final VoidCallback onSettingsPressed;
   final AudioPlayer player;
   const TapPuzzleMainMenu({
-    Key? key,
+    super.key,
     required this.onSettingsPressed,
     required this.player,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

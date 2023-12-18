@@ -14,6 +14,7 @@ class ProviderPage extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('ProviderHome'),
       ),
+      // ignore: avoid_unnecessary_containers
       body: Container(
         // one way to get the value of valueProvider is by using
         // consumer widget.
@@ -35,7 +36,7 @@ class ProviderPage extends ConsumerWidget {
         child: Center(
           child: Text(
             'The value is ${ref.watch(valueProvider)}',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
       ),

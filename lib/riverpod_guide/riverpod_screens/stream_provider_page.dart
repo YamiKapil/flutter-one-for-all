@@ -22,7 +22,7 @@ class StreamProviderPage extends ConsumerWidget {
           data: (data) {
             return Text(
               data.toString(),
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             );
           },
           error: (error, _) {

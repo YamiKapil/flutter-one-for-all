@@ -15,7 +15,7 @@ class CustomPieChart extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Stack(
+            const Stack(
               children: [
                 CircularProgressIndicator(
                   // backgroundColor: Colors.blue,
@@ -39,7 +39,7 @@ class CustomPieChart extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             SizedBox(
@@ -52,9 +52,9 @@ class CustomPieChart extends StatelessWidget {
                   linearGradientFirstColor: Colors.blue,
                   linearGradientSecondColor: Colors.red,
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text('Text here'),
                     Text('Text here'),
                   ],

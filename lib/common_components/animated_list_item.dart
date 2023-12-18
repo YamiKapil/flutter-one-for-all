@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AnimatedListItem extends StatefulWidget {
   final int index;
 
-  const AnimatedListItem(this.index, {Key? key}) : super(key: key);
+  const AnimatedListItem(this.index, {super.key});
 
   @override
   State<AnimatedListItem> createState() => _AnimatedListItemState();

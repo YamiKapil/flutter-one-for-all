@@ -53,12 +53,11 @@ class _ResponsiveRowState extends State<ResponsiveRow> {
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Column(
+                      child: const Column(
                         mainAxisSize: MainAxisSize.min,
-                        children: const [
+                        children: [
                           Icon(Icons.ramen_dining),
-                          Text(
-                              'Hello t there is lsdjflsd flsd  or is it?'),
+                          Text('Hello t there is lsdjflsd flsd  or is it?'),
                         ],
                       ),
                     );
@@ -80,11 +79,11 @@ class _ResponsiveRowState extends State<ResponsiveRow> {
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Column(
+                  child: const Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.ramen_dining),
-                      const Text('Hello there'),
+                      Text('Hello there'),
                     ],
                   ),
                 ),
@@ -101,11 +100,11 @@ class _ResponsiveRowState extends State<ResponsiveRow> {
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.ramen_dining),
-                    const Text('Hello there'),
+                    Text('Hello there'),
                   ],
                 ),
               ),

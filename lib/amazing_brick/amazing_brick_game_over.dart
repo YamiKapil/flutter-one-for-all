@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:one_for_all/common_components/rounded_button.dart';
 
 class AmazingBrickGameOver extends StatelessWidget {
@@ -47,7 +46,7 @@ class AmazingBrickGameOver extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              child: Row(
+              child: const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(

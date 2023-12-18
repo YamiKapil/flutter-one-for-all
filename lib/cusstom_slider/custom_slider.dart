@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 class CustomSlider extends StatefulWidget {
   static const String routeName = '/material/slider';
 
+  const CustomSlider({super.key});
+
   @override
-  _CustomSliderState createState() => _CustomSliderState();
+  CustomSliderState createState() => CustomSliderState();
 }
 
 Path _triangle(double size, Offset thumbCenter, {bool invert = false}) {
@@ -136,7 +138,7 @@ class _CustomValueIndicatorShape extends SliderComponentShape {
   }
 }
 
-class _CustomSliderState extends State<CustomSlider> {
+class CustomSliderState extends State<CustomSlider> {
   double _value = 8.0;
   double _discreteValue = 9.0;
 
@@ -166,11 +168,11 @@ class _CustomSliderState extends State<CustomSlider> {
                 const Text('Continuous'),
               ],
             ),
-            Column(
+            const Column(
               mainAxisSize: MainAxisSize.min,
-              children: const <Widget>[
-                const Slider(value: 0.25, onChanged: null),
-                const Text('Disabled'),
+              children: <Widget>[
+                Slider(value: 0.25, onChanged: null),
+                Text('Disabled'),
               ],
             ),
             Column(

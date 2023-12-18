@@ -5,8 +5,8 @@ import 'package:one_for_all/riverpod_guide/riverpod_service/api_service.dart';
 
 final suggestionFutureProvider =
     FutureProvider.autoDispose<Suggestion>((ref) async {
-    // when passing data (parameter)...
-    // FutureProvider.autoDispose.family<Suggestion, String>((ref, id) async {
+  // when passing data (parameter)...
+  // FutureProvider.autoDispose.family<Suggestion, String>((ref, id) async {
   final apiService = ref.watch(apiServiceProvider);
   return apiService.getSuggestion();
   // when passing data..
@@ -33,7 +33,7 @@ class FutureProviderPage extends ConsumerWidget {
               data: (data) {
                 return Text(
                   data.activity,
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 );
               },
               error: (error, _) {

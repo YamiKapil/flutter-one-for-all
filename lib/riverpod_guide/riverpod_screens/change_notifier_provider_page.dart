@@ -14,7 +14,7 @@ class ChangeNotifierProviderPage extends ConsumerWidget {
         title: const Text('Change Notifier Provider'),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right:10),
+            padding: const EdgeInsets.only(right: 10),
             child: Stack(
               children: [
                 IconButton(
@@ -35,7 +35,7 @@ class ChangeNotifierProviderPage extends ConsumerWidget {
                               // sum the total price of the cart
                               Text(
                                 'Total: \$${cartNotifier.cart.fold<double>(0, (previousValue, element) => previousValue + element.price)}',
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context).textTheme.titleLarge,
                               ),
                             ],
                           ),

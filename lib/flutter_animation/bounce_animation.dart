@@ -5,8 +5,7 @@ class Dance extends StatefulWidget {
       {required this.child,
       required this.animate,
       required this.delay,
-      Key? key})
-      : super(key: key);
+      super.key});
 
   final Widget child;
   final bool animate;
