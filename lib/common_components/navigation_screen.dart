@@ -4,6 +4,7 @@ import 'package:one_for_all/battery_level/battery_level.dart';
 import 'package:one_for_all/bounce_widget/bouncing_widget.dart';
 import 'package:one_for_all/click_game/click_game.dart';
 import 'package:one_for_all/cusstom_slider/custom_slider.dart';
+import 'package:one_for_all/flame_things/flame_animation/flame_animation.dart';
 import 'package:one_for_all/flutter_animation/animation_home.dart';
 import 'package:one_for_all/flutter_animation/animation_td.dart';
 import 'package:one_for_all/flutter_animation/bouncing_ball_animation/bouncing_ball_animation.dart';
@@ -315,6 +316,12 @@ List<Widget> listOfScreens = [
     screenName: 'Sparkling Animation',
     navigationScreen: Sparkling(),
     icon: Icons.star,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Flame Animation',
+    navigationScreen: FlameAnimationWidget(title: 'Flame Animation'),
+    icon: Icons.flare,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];
