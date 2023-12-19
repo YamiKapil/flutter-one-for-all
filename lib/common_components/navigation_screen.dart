@@ -18,6 +18,7 @@ import 'package:one_for_all/flutter_animation/implict_example/animated_color_pal
 import 'package:one_for_all/flutter_animation/implict_example/animated_shoping_cart.dart';
 import 'package:one_for_all/flutter_animation/implict_example/animated_tween_animation.dart';
 import 'package:one_for_all/flutter_animation/page_route_example/page_animation.dart';
+import 'package:one_for_all/flutter_animation/sparkling_animation/sparkling_animation.dart';
 import 'package:one_for_all/flutter_map/track_map.dart';
 import 'package:one_for_all/flutter_painter/my_graph.dart';
 import 'package:one_for_all/flutter_painter/paint_curves.dart';
@@ -308,6 +309,12 @@ List<Widget> listOfScreens = [
     screenName: 'Bouncing Ball',
     navigationScreen: BouncingBallAnimation(),
     icon: Icons.circle,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Sparkling Animation',
+    navigationScreen: Sparkling(),
+    icon: Icons.star,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];
