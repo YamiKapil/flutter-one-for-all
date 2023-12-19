@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Bounce extends StatefulWidget {
-  const Bounce({required this.child, required this.animate, Key? key})
-      : super(key: key);
+  const Bounce({required this.child, required this.animate, super.key});
 
   final Widget child;
   final bool animate;

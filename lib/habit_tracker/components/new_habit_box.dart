@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NewHabitBox extends StatelessWidget {
-  final controller;
+  final TextEditingController controller;
   final VoidCallback onSave;
   final VoidCallback onCancel;
   const NewHabitBox({

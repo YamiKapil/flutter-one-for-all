@@ -26,13 +26,13 @@ class TickerBuilder extends StatefulWidget {
           BuildContext context, Duration sinceLastDraw, Duration totalElapsed)
       builder;
 
-  const TickerBuilder({Key? key, required this.builder}) : super(key: key);
+  const TickerBuilder({super.key, required this.builder});
 
   @override
-  _TickerBuilderState createState() => _TickerBuilderState();
+  TickerBuilderState createState() => TickerBuilderState();
 }
 
-class _TickerBuilderState extends State<TickerBuilder> {
+class TickerBuilderState extends State<TickerBuilder> {
   // creates a ticker which ensures that the onTick function is called every frame
   late final Ticker _ticker = Ticker(onTick);
 

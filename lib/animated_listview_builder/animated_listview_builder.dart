@@ -48,9 +48,7 @@ class _AnimatedListViewBuilderState extends State<AnimatedListViewBuilder> {
                     setState(() {
                       listKey.currentState?.insertItem(0,
                           duration: const Duration(milliseconds: 500));
-                      _items = []
-                        ..add(counter++)
-                        ..addAll(_items);
+                      _items = [counter++, ..._items];
                     });
                   },
                   child: const Text(
@@ -83,11 +81,11 @@ class _AnimatedListViewBuilderState extends State<AnimatedListViewBuilder> {
 
   Widget slideIt(BuildContext context, int index, animation) {
     int item = _items[index];
-    TextStyle? textStyle = Theme.of(context).textTheme.headline4;
+    TextStyle? textStyle = Theme.of(context).textTheme.headlineMedium;
     return SlideTransition(
       position: Tween<Offset>(
         begin: const Offset(-1, 0),
-        end: Offset(0, 0),
+        end: const Offset(0, 0),
       ).animate(animation),
       child: SizedBox(
         // Actual widget to display

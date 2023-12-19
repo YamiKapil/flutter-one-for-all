@@ -9,19 +9,20 @@ class FlipAnimation extends StatefulWidget {
   final Axis flipDirection;
 
   const FlipAnimation({
-    Key? key,
+    super.key,
     required this.controller,
     required this.firstChild,
     required this.secondChild,
     this.flipDuration = const Duration(milliseconds: 300),
     this.flipDirection = Axis.horizontal,
-  }) : super(key: key);
+  });
 
   @override
-  _FlipAnimationState createState() => _FlipAnimationState();
+  FlipAnimationState createState() => FlipAnimationState();
 }
 
-class _FlipAnimationState extends State<FlipAnimation> with SingleTickerProviderStateMixin {
+class FlipAnimationState extends State<FlipAnimation>
+    with SingleTickerProviderStateMixin {
   late AnimationController flipAnimation;
   late bool isFront;
 

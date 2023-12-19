@@ -7,7 +7,7 @@ final cartNotifierProvider = ChangeNotifierProvider<CartNotifier>(
 );
 
 class CartNotifier extends ChangeNotifier {
-  List<Product> _cart = [];
+  final List<Product> _cart = [];
   Product? product;
 
   List<Product> get cart => _cart;

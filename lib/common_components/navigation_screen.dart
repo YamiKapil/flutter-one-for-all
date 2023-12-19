@@ -6,10 +6,19 @@ import 'package:one_for_all/click_game/click_game.dart';
 import 'package:one_for_all/cusstom_slider/custom_slider.dart';
 import 'package:one_for_all/flutter_animation/animation_home.dart';
 import 'package:one_for_all/flutter_animation/animation_td.dart';
+import 'package:one_for_all/flutter_animation/bouncing_ball_animation/bouncing_ball_animation.dart';
 import 'package:one_for_all/flutter_animation/chain_animation.dart';
 import 'package:one_for_all/flutter_animation/custom_painter_polygon_animations/custom_painter_polygons_animation.dart';
+import 'package:one_for_all/flutter_animation/explict_example/list_animation.dart';
+import 'package:one_for_all/flutter_animation/explict_example/loading_animation.dart';
+import 'package:one_for_all/flutter_animation/explict_example/login_animation.dart';
 import 'package:one_for_all/flutter_animation/hero_animation.dart';
 import 'package:one_for_all/flutter_animation/implict_animation.dart';
+import 'package:one_for_all/flutter_animation/implict_example/animated_color_pallet.dart';
+import 'package:one_for_all/flutter_animation/implict_example/animated_shoping_cart.dart';
+import 'package:one_for_all/flutter_animation/implict_example/animated_tween_animation.dart';
+import 'package:one_for_all/flutter_animation/page_route_example/page_animation.dart';
+import 'package:one_for_all/flutter_animation/sparkling_animation/sparkling_animation.dart';
 import 'package:one_for_all/flutter_map/track_map.dart';
 import 'package:one_for_all/flutter_painter/my_graph.dart';
 import 'package:one_for_all/flutter_painter/paint_curves.dart';
@@ -169,13 +178,13 @@ List<Widget> listOfScreens = [
     icon: Icons.line_axis_rounded,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Painter and Polygons Animation',
     navigationScreen: PathExample(),
     icon: Icons.line_axis_rounded,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Liquid Circular Progress Indicator',
     navigationScreen: LiquidCircularProgressIndicatorPage(),
     icon: Icons.line_axis_rounded,
@@ -199,7 +208,7 @@ List<Widget> listOfScreens = [
     icon: Icons.touch_app_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Paint Demo',
     navigationScreen: PaintDemo(),
     icon: Icons.format_paint_outlined,
@@ -245,10 +254,67 @@ List<Widget> listOfScreens = [
     icon: Icons.map_outlined,
     // appImage: 'assets/images/card_bg.jpg',
   ),
-  NavigationButton(
+  const NavigationButton(
     screenName: 'Custom Slider',
     navigationScreen: CustomSlider(),
     icon: Icons.map_outlined,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Animated Color Palette',
+    navigationScreen: AnimatedColorPallete(),
+    icon: Icons.color_lens,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Animated Shopping Cart',
+    navigationScreen: ShopingCartButton(),
+    icon: Icons.shopping_cart,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Pulsating Circle',
+    navigationScreen: PulsatingCircleAnimation(),
+    icon: Icons.circle,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Login Animation',
+    navigationScreen: LoginScreenAnimation(),
+    icon: Icons.login_rounded,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'List Animation',
+    navigationScreen: ListAnimation(),
+    icon: Icons.list_alt,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Loading Animation',
+    navigationScreen: LoadingAnimation(
+      progress: 100,
+      color: Colors.red,
+    ),
+    icon: Icons.circle_outlined,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Page Animation',
+    navigationScreen: PageAnimation(),
+    icon: Icons.pages,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Bouncing Ball',
+    navigationScreen: BouncingBallAnimation(),
+    icon: Icons.circle,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Sparkling Animation',
+    navigationScreen: Sparkling(),
+    icon: Icons.star,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];

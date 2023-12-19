@@ -37,13 +37,13 @@ class GameTimer {
 }
 
 class GameWidget extends StatefulWidget {
-  const GameWidget({Key? key}) : super(key: key);
+  const GameWidget({super.key});
 
   @override
-  _GameWidgetState createState() => _GameWidgetState();
+  GameWidgetState createState() => GameWidgetState();
 }
 
-class _GameWidgetState extends State<GameWidget> {
+class GameWidgetState extends State<GameWidget> {
   static final _rng = Random();
 
   late Alignment _playerAlignment;
@@ -190,11 +190,11 @@ class _GameWidgetState extends State<GameWidget> {
                             side:
                                 const BorderSide(width: 2, color: Colors.white),
                           ),
+                          onPressed: _startGame,
                           child: const Padding(
                             padding: EdgeInsets.all(8.0),
                             child: TextPrompt('Start', color: Colors.white),
                           ),
-                          onPressed: _startGame,
                         ),
                 ],
               ),
@@ -208,11 +208,11 @@ class _GameWidgetState extends State<GameWidget> {
 
 class Target extends StatelessWidget {
   const Target({
-    Key? key,
+    super.key,
     required this.color,
     required this.textColor,
     required this.text,
-  }) : super(key: key);
+  });
   final Color color;
   final Color textColor;
   final String text;
@@ -241,10 +241,10 @@ class Target extends StatelessWidget {
 class TextPrompt extends StatelessWidget {
   const TextPrompt(
     this.text, {
-    Key? key,
+    super.key,
     required this.color,
     this.fontSize = 32,
-  }) : super(key: key);
+  });
   final String text;
   final Color color;
   final double fontSize;
@@ -252,7 +252,6 @@ class TextPrompt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedDefaultTextStyle(
-      child: Text(text),
       duration: const Duration(milliseconds: 250),
       style: TextStyle(
         color: color,
@@ -266,6 +265,7 @@ class TextPrompt extends StatelessWidget {
           ),
         ],
       ),
+      child: Text(text),
     );
   }
 }

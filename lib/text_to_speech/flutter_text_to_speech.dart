@@ -8,12 +8,12 @@ class FlutterTextToSpeech extends StatefulWidget {
   const FlutterTextToSpeech({super.key});
 
   @override
-  _FlutterTextToSpeechState createState() => _FlutterTextToSpeechState();
+  FlutterTextToSpeechState createState() => FlutterTextToSpeechState();
 }
 
 enum TtsState { playing, stopped, paused, continued }
 
-class _FlutterTextToSpeechState extends State<FlutterTextToSpeech> {
+class FlutterTextToSpeechState extends State<FlutterTextToSpeech> {
   late FlutterTts flutterTts;
   String? language;
   String? engine;

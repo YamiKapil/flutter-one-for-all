@@ -1,6 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:one_for_all/tap_puzzle/data/audio_provider.dart';
 import 'package:one_for_all/tap_puzzle/data/constants.dart';
 import 'package:one_for_all/tap_puzzle/screens/settings/tap_puzzle_settings.dart';
 

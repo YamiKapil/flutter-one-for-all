@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:one_for_all/liquid_circular_progress/liquid_circular_progress.dart';
 
 class LiquidCircularProgressIndicatorPage extends StatelessWidget {
+  const LiquidCircularProgressIndicatorPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Liquid Circular Progress Indicators"),
+        title: const Text("Liquid Circular Progress Indicators"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -107,10 +109,10 @@ class _AnimatedLiquidCircularProgressIndicatorState
         child: LiquidCircularProgressIndicator(
           value: _animationController.value,
           backgroundColor: Colors.white,
-          valueColor: AlwaysStoppedAnimation(Colors.blue),
+          valueColor: const AlwaysStoppedAnimation(Colors.blue),
           center: Text(
             "${percentage.toStringAsFixed(0)}%",
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.lightBlueAccent,
               fontSize: 20.0,
               fontWeight: FontWeight.bold,

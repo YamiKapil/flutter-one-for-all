@@ -24,7 +24,7 @@ class BrickBarrier extends StatelessWidget {
       child: Container(
         width: width,
         height: 20,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           // color: color,
           color: Colors.black,
           // border: Border.all(
