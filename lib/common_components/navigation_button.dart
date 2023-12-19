@@ -87,6 +87,7 @@ class _NavigationButtonState extends State<NavigationButton>
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(fontSize: 12),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
