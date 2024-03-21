@@ -23,7 +23,7 @@ class MyHomePage extends StatelessWidget {
         child: GridView.builder(
           itemCount: listOfScreens.length,
           shrinkWrap: true,
-          gridDelegate:const  SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
           ),
           itemBuilder: (context, index) => Padding(
