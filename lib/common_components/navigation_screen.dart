@@ -4,6 +4,7 @@ import 'package:one_for_all/battery_level/battery_level.dart';
 import 'package:one_for_all/bounce_widget/bouncing_widget.dart';
 import 'package:one_for_all/click_game/click_game.dart';
 import 'package:one_for_all/cusstom_slider/custom_slider.dart';
+import 'package:one_for_all/custom_step_progress/custom_step_progress.dart';
 import 'package:one_for_all/default_text_behaviour/default_text_behaviour.dart';
 import 'package:one_for_all/flame_things/flame_animation/flame_animation.dart';
 import 'package:one_for_all/flutter_animation/animation_home.dart';
@@ -329,6 +330,16 @@ List<Widget> listOfScreens = [
     screenName: 'Default Text Behaviour',
     navigationScreen: DefaultTextBehaviourScreen(),
     icon: Icons.flare,
+    // appImage: 'assets/images/card_bg.jpg',
+  ),
+  const NavigationButton(
+    screenName: 'Step Progress Indicator',
+    navigationScreen: StepProgressIndicator(
+      currentPage: 1,
+      size: 20,
+      totalPage: 5,
+    ),
+    icon: Icons.circle_rounded,
     // appImage: 'assets/images/card_bg.jpg',
   ),
 ];
